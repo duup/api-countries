@@ -1,2 +1,11 @@
 let url = 'https://restcountries.eu/rest/v2/name/Malaysia';
-fetch(url, { method: 'GET' });
+
+function waitForData(response) {
+  return response.json();
+}
+
+function handleData(data) {
+  console.log(data);
+}
+
+fetch(url, { method: 'GET' }).then(waitForData).then(handleData);
